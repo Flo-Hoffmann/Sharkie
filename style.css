@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "wavepool";
+  src: url("./fonts/wavepool.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "wavepool", sans-serif, Arial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.d-initial {
+  display: initial !important;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: normal;
+  letter-spacing: 5px;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
+}
+
+.game-container {
+  position: relative;
+}
+
+.start-screen,
+.kill-screen,
+.gameover-screen {
+  position: absolute;
+  background-size: cover;
+  width: 720px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+}
+
+.start-screen {
+  background-image: url("img/3. Background/Light/1.png");
+}
+
+.kill-screen,
+.gameover-screen {
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: space-between;
+}
+
+#you-win,
+#gameover {
+  margin: 32px;
+  width: 70%;
+  position: relative;
+}
+
+.retry {
+  margin: 80px;
+}
+
+@keyframes fadeIn {
+  from {
+    bottom: -100%;
+  }
+
+  to {
+    bottom: 0%;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease;
+}
+
+.btn {
+  height: 80px;
+  width: 240px;
+  display: block;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.instr {
+  width: 400px;
+}
+
+canvas {
+  background-color: black;
+  display: block;
+}
+
+.toggle-audio {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.toggle-audio:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 720px) {
+  canvas {
+    width: 100vw;
+  }
+
+  .start-screen,
+  .kill-screen,
+  .gameover-screen {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-height: 480px) {
+  canvas {
+    height: 100vh;
+  }
+  h1 {
+    display: none;
+  }
+
+  .start-screen,
+  .kill-screen,
+  .gameover-screen {
+    height: 100vh;
+  }
+}

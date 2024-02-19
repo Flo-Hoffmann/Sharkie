@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sharkie!</title>
+    <script src="./models/wold.class.js"></script>
+    <script src="./models/drawableObject.class.js"></script>
+    <script src="./models/collectableObject.class.js"></script>
+    <script src="./models/statusBar.class.js"></script>
+    <script src="./models/moveableObject.class.js"></script>
+    <script src="./models/backgroundObject.class.js"></script>
+    <script src="./models/character.class.js"></script>
+    <script src="./models/enemy.class.js"></script>
+    <script src="./models/pufferFish.class.js"></script>
+    <script src="./models/jellyFish.class.js"></script>
+    <script src="./models/endboss.class.js"></script>
+    <script src="./models/controls.class.js"></script>
+    <script src="./models/bubbleAttack.class.js"></script>
+    <script src="./models/level.class.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./levels/level1.js"></script>
+  </head>
+  <body onload="init()">
+    <div class="game-container">
+      <div id="start-screen" class="start-screen">
+        <h1>Sharkie!</h1>
+        <img
+          class="start btn"
+          src="img/6.Botones/Start/3.png"
+          onclick="startGame()"
+        />
+        <img class="instr" src="img/6.Botones/Instructions 2.png" />
+      </div>
+
+      <div id="kill-screen" class="kill-screen d-none">
+        <img id="you-win" src="img/6.Botones/Tittles/You win/Recurso 22.png" />
+        <img
+          id="retry"
+          class="btn retry d-none"
+          src="img/6.Botones/Try again/Recurso 15.png"
+          onclick="startGame(); resetKillScreen()"
+        />
+      </div>
+
+      <div id="gameover-screen" class="gameover-screen d-none">
+        <img
+          id="gameover"
+          src="img/6.Botones/Tittles/Game Over/Recurso 9.png"
+        />
+        <img
+          id="retry-gameover"
+          class="btn retry"
+          src="img/6.Botones/Try again/Recurso 15.png"
+          onclick="startGame(); resetGameoverScreen()"
+        />
+      </div>
+
+      <canvas id="canvas" width="720" height="480"></canvas>
+
+      <img
+        id="audio-on"
+        class="toggle-audio"
+        src="./img/audioon.svg"
+        onclick="stopAudio()"
+      />
+
+      <img
+        id="audio-off"
+        class="toggle-audio d-none"
+        src="./img/audiooff.svg"
+        onclick="startAudio()"
+      />
+    </div>
+  </body>
+</html>
